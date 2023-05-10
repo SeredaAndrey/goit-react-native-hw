@@ -1,12 +1,10 @@
-import db from "../../config";
+import auth from "../../config";
 
 export const authCreateUser =
   ({ email, password, name }) =>
   async (dispatch, getState) => {
     try {
-      const user = await db
-        .auth()
-        .createUserWithEmailAndPassword(email, password);
+      const user = await auth.createUserWithEmailAndPassword(email, password);
     } catch (error) {
       console.log("error.message", error.message);
     }

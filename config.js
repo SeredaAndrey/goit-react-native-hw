@@ -1,4 +1,4 @@
-import * as firebase from "firebase";
+import firebase from "firebase";
 import "firebase/auth";
 // import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
