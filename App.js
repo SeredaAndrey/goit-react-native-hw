@@ -36,7 +36,7 @@ export default function App() {
     }
   }, [appIsReady]);
 
-  const routing = useRoute({});
+  const routing = useRoute(false);
 
   if (!appIsReady) {
     return null;

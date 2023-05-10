@@ -14,6 +14,9 @@ import {
   Image,
 } from "react-native";
 
+import { useDispatch } from "react-redux";
+import { authCreateUser } from "../../redux/auth/authOperations";
+
 const initialState = {
   name: "",
   email: "",
@@ -25,6 +28,8 @@ export default function RegisterScreen({ navigation }) {
   const [state, setState] = useState(initialState);
   const [dimensions, setdimensions] = useState(Dimensions.get("window").width);
   const [securePassword, setSecurePassword] = useState(true);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const onChange = () => {
@@ -39,6 +44,7 @@ export default function RegisterScreen({ navigation }) {
 
   const onSubmit = () => {
     console.log(state);
+    dispatch(authCreateUser(state));
     setState(initialState);
     hideKeyboard();
   };
